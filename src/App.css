@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #f5cd1a;
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(46, 182, 19);
+}
+.button_class {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(231, 217, 22);
+  border-radius: 50%;
+  border: 1px solid rgb(19, 20, 18);
+  background: url("https://es.pngtree.com/freepng/set-of-colorful-taxi-car-service-transport-vector-illustration_7256659.htmlhttps://es.pngtree.com/free-png-vectors/taxi.png");
+  background-size: 100%;
+}
+
+.button_class:hover {
+  background-size: 150%;
+  /* -webkit-transition:all 0.3s ease-in-out; */
+  }
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
