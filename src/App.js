@@ -1,36 +1,41 @@
 import {useEffect, useState} from 'react';
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-// import background from "./img/taxi.png";
+
 import Pedidos from './compoentes/pedidos';
-import Localizacion from'./compoentes/localizacion';
+import Busqueda from './compoentes/busqueda';
+import Realiza_Pedido from './compoentes/realiza_pedido';
 function App() {
-  // <div style={{ 
-  //   backgroundImage: url=("https%3A%2F%2Fwww.freepng.es%2Fpng-xjfwk2%2F&psig=AOvVaw1U9zSwO9aQIefSrkwGv9Hd&ust=1666389847975000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJjdo-Po7_oCFQAAAAAdAAAAABAD")
-  // }}>
-  //  PEDIDO
-  // </div>
-   const [localizacion, setLocalizacion] = useState([]);
-   const traerDato = useEffect(() => {
-  fetch( "https://https%3A%2F%2Fwww.freepng.es%2Fpng-xjfwk2%2F&psig=AOvVaw1U9zSwO9aQIefSrkwGv9Hd&ust=1666389847975000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJjdo-Po7_oCFQAAAAAdAAAAABAD")
-  .then((response) => response.json())
-  .then((data) => {
-        console.log(data.results)
-          setLocalizacion(data.results)}
-       );
-   },[])
+  const [localizacion,setLocalizacion]=useState ([]);
+const traerpokemones=useEffect(() =>{fetch("C:/Users/marcela/Desktop/LENGUAJE4/parcial2/src/img/taxi.png").them((response)=>response.json()).then(data=>setLocalizacion(data.results))})
+
+
+  function traerLocalizacion(){
+   console.log(localizacion)
+ }
+
+  // const [localizacion,setLocalizacion]=useState ([]);
+  // const traerLocalizacion = useEffect(() => {
+  //   fetch( "C:/Users/marcela/Desktop/LENGUAJE4/parcial2/src/img/taxi.png")
+  //      .then((response) => response.json())
+  //      .then((data) => {
+  //        console.log(data.results)
+  //        setLocalizacion(data.results)}
+  //      );
+  //  },[])
+  
    return (
     <div className="App">
    <Pedidos/>
       <Routes>
-        <Route path="/Solicitud Servicio" element={<Pedidos/>}>
-          <Route path="/Solicitud"/> 
+        <Route path="/Solicitud Servicio" element={<Realiza_Pedido/>}>
+          <Route path="/solicitud"/> 
            <BrowserRouter> </BrowserRouter>
         </Route>
-        <Localizacion/>
          <Routes/>
-           <Route path="/Ubicando Vehiculo" element={<Localizacion/>}></Route>
-             <Route path="/acerca"/>
+           <Route path="/Ubicando Vehiculo" element={<Busqueda/>}></Route>
+             <Route path="/solicitud"/>
                <BrowserRouter> </BrowserRouter>
         </Routes>
   
