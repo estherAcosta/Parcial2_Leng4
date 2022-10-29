@@ -1,49 +1,47 @@
-import React, { useState } from 'react'
-
-import MapPicker from 'react-google-map-picker'
-
-const DefaultLocation = { lat: 1.147395754817287, lng: -76.64051892892026};
-const DefaultZoom = 17;
+import React from "react";
+import { useGeolocated } from "react-geolocated";
 
 const Localizacion = () => {
+    const { coords, isGeolocationAvailable, isGeolocationEnabled } =
+        useGeolocated({
+            positionOptions: {
+                enableHighAccuracy: false,
+            },
+            userDecisionTimeout: 5000,
+        });
 
-  const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
+    return !isGeolocationAvailable ? (
+        <div>Su navegador no es compatible con la geolocalización</div>
+    ) : !isGeolocationEnabled ? (
+        <div>La geolocalización no está habilitada</div>
+    ) : coords ? (
+        <table>
+            <tbody>
+                <tr>
+                    <td>latitude</td>
+                    <td>{coords.latitude}</td>
+                </tr>
+                <tr>
+                    <td>longitude</td>
+                    <td>{coords.longitude}</td>
+                </tr>
+                <tr>
+                    <td>altitude</td>
+                    <td>{coords.altitude}</td>
+                </tr>
+                <tr>
+                    <td>heading</td>
+                    <td>{coords.heading}</td>
+                </tr>
+                <tr>
+                    <td>speed</td>
+                    <td>{coords.speed}</td>
+                </tr>
+            </tbody>
+        </table>
+    ) : (
+        <div>Se ha encontrado su vehiculo&hellip; </div>
+    );
+};
 
-  const [localizacion, setLocalizacion] = useState(defaultLocation);
-  const [zoom, setZoom] = useState(DefaultZoom);
-
-  function handleChangeLocation (lat, lng){
-    setLocation({lat:lat, lng:lng});
-  }
-  
-  function handleChangeZoom (newZoom){
-    setZoom(newZoom);
-  }
-
-  function handleResetLocation(){
-    setDefaultLocation({ ...DefaultLocation});
-    setZoom(DefaultZoom);
-  }
-
-  return (
-    <div>
-      {/* <label>Latitute:</label> */}
-      <input type="hidden" value={localizacion.lat} disabled />
-      {/* <label>Longitute:</label> */}
-      <input type="hidden" value={localizacion.lng} disabled />
-      {/* <label>Zoom:</label> */}
-      <input type="hidden" value={zoom} disabled />
-      <MapPicker
-        defaultLocation={defaultLocation}
-        zoom={zoom}
-        mapTypeId="hybrid"
-        style={{ height: "500px" }}
-        onChangeLocation={handleChangeLocation}
-        onChangeZoom={handleChangeZoom}
-        apiKey="AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8"
-      />
-      <button onClick={handleResetLocation}>Volver Ubicacion</button>
-    </div>
-  );
-}
-export default Localizacion
+export default Localizacion;
