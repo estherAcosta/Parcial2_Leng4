@@ -6,17 +6,17 @@ import './App.css';
 import Pedidos from './compoentes/pedidos';
 import Busqueda from './compoentes/busqueda';
 import RealizaPedido from './compoentes/realizapedido';
-import Localizacion from "./compoentes/localizacion";
+import Locate from "./compoentes/locate";
 function App() {
   
    return ( 
   <div className="App">
-  <Pedidos/>
    <BrowserRouter>
    <Routes>
    <Route path="/solicitud " element={<RealizaPedido/>}/>
-      <Route path="/Ubicando Vehiculo" element={<Busqueda/>}/>
-      <Route path="/localizacion" element={<Localizacion/>}/>
+      <Route path="/ubicando_vehiculo" element={<Busqueda/>}/>
+      <Route path="/hacer_pedido" element={<Pedidos/>}/>
+      <Route path="/localizacion" element={<Locate/>}/>
         <Route path="/solicitud"/>
      </Routes>
     </BrowserRouter>
