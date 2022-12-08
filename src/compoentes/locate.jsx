@@ -40,7 +40,7 @@ const Locate = () => {
         onChangeZoom={handleChangeZoom}
         apiKey="AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8"
       />
-      <button onClick={handleResetLocation}>Volver a la Ubicacion</button>
+      <button onClick={handleResetLocation}>ubicando_vehiculo</button>
     </div>
   );
 }
