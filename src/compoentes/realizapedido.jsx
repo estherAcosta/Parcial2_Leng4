@@ -2,7 +2,7 @@ import React from "react";
 const RealizaPedido = () => {
   return (
 <div>
-    <div>Has tu reserva del Servico</div>
+    <h1>Has tu reserva del Servico</h1>
         <input
         placeholder="Ingrese Direccion de Origen"
         className="form-control"
