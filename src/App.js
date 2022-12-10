@@ -1,4 +1,4 @@
-// import ImageGallery from 'react-image-gallery';
+
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
@@ -14,7 +14,6 @@ function App() {
    <BrowserRouter>
    <Inicio />
    <Routes>
-     {/* <Route path="/entrada" element={<Inicio />} /> */}
       <Route path="/ubicando_vehiculo" element={<Busqueda/>}/>
       <Route path="/realiza_pago" element={<Pedidos/>}/>
       <Route path="/localizacion" element={<Locate/>}/>

@@ -3,12 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 const Inicio = () => {
   return (
-    <div class="inicio_div">
+    <div className="inicio_div">
       <nav>
         <section>
           <span> 🚕👮🚕👮</span>
           <span>BIENVENIDOS A SERVITAXI</span>
           <span> 🚕👮🚕👮</span>
+          <ul></ul>
           <img src={Img3} alt="" className="item-img"></img>
           <h3>Realiza tu pedido de Servicio ¡YA! </h3>
           <ul></ul>
